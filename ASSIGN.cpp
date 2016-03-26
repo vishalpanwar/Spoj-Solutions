@@ -18,6 +18,7 @@ int n, t, sum_x, sum_y,m,x,y,arr[25][25],allmask;
 ll dp[N], ans;
 vector<int> subList[25];
 
+//'mask' denotes :
 //if ith bit of mask is set than this means that for some student j with index < (no. of set bit in mask) must have liked that subject
 //with subject_index i and we did the assignment of this subject to that student represented in the mask
 
