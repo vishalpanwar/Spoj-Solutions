@@ -7,8 +7,28 @@ typedef long long ll;
 #define mod 1000000007
 #define Endl endl
 using namespace std;
-ll powmod(ll a, int b) { ll res = 1; if (a >= mod)a %= mod; for (; b; b >>= 1){ if (b & 1)res = res*a; if (res >= mod)res %= mod; a = a*a; if (a >= mod)a %= mod; }return res; }
-ll gcd(ll a, ll b){ if (a < b)std::swap(a, b); return b == 0 ? a : gcd(b, a % b); }
+ll powmod(ll a, int b) {
+	ll res = 1; 
+	if (a >= mod)
+	a %= mod; 
+	for (; b; b >>= 1)
+	{
+	if (b & 1)
+	res = res*a; 
+	if (res >= mod)
+	res %= mod; 
+	a = a*a; 
+	if (a >= mod)
+	a %= mod; 
+	}
+	return res;
+}
+ll gcd(ll a, ll b)
+{
+	if (a < b)
+	std::swap(a, b); 
+	return b == 0 ? a : gcd(b, a % b); 
+}
 ll lcm(ll a, ll b){ return ((a*b) / gcd(a, b)); }
 int l_bound(int *arr, int lo, int hi, int val){ while (lo <= hi){ int mid = (lo + hi) >> 1; if (arr[mid] >= val)hi = mid - 1; else lo = mid + 1; }return lo; }
 int u_bound(int *arr, int lo, int hi, int val){ while (lo <= hi){ int mid = (lo + hi) >> 1; if (arr[mid] > val)hi = mid - 1; else lo = mid + 1; }return hi; }
